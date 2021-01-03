@@ -1,0 +1,35 @@
+﻿@typeparam TItem
+@inherits PageableViewBase<TItem>
+
+@if (Data?.Any() == true)
+{
+    @Template(Data[Index])
+}
+
+@if (Data != null)
+{
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <button class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </button>
+            </li>
+
+            @foreach (var item in Items)
+            {
+                <li class="page-item @(Index == item.Index ? "active" : "")">
+                    <button class="page-link" @onclick="@(() => Index = item.Index)">@(item.Index + 1)</button>
+                </li>
+            }
+
+            <li class="page-item disabled">
+                <button class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+}

@@ -18,12 +18,12 @@ namespace Ebooks.Api.Controllers
             _ebookRepository = ebookRepository;
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetAll()
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetById(int id)
         {
             try
             {
-                var result = await _ebookRepository.GetAll();
+                var result = await _ebookRepository.GetById(id);
                 return Ok(result);
             }
             catch (System.Exception ex)
@@ -33,12 +33,12 @@ namespace Ebooks.Api.Controllers
             }
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult> GetById(int id)
+        [HttpGet]
+        public async Task<ActionResult> GetAll()
         {
             try
             {
-                var result = await _ebookRepository.Get(id);
+                var result = await _ebookRepository.GetAll();
                 return Ok(result);
             }
             catch (System.Exception ex)

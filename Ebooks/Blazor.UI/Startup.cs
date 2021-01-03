@@ -33,7 +33,7 @@ namespace Blazor.UI
 
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddScoped<IEbookRepository, EbookRepository>();
+            services.AddScoped<EbookService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

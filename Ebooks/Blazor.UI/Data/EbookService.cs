@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Ebooks.Core.Domain;
-using Ebooks.Core.Interfaces;
 
 namespace Blazor.UI.Data
 {
-    public class EbookRepository : IEbookRepository
+    public class EbookService
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public EbookRepository(IHttpClientFactory httpClientFactory)
+        public EbookService(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -52,21 +50,6 @@ namespace Blazor.UI.Data
                     );
                 }
             }
-        }
-
-        public Task Add(Ebook entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Remove(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Update(Ebook entity)
-        {
-            throw new NotImplementedException();
         }
     }
 }

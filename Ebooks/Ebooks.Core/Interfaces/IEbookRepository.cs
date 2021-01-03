@@ -7,10 +7,7 @@ namespace Ebooks.Core.Interfaces
 {
     public interface IEbookRepository
     {
-        Task<Ebook> Get(int id, CancellationToken cancellationToken = default);
+        Task<Ebook> GetById(int id, CancellationToken cancellationToken = default);
         Task<IEnumerable<Ebook>> GetAll(CancellationToken cancellationToken = default);
-        Task Add(Ebook entity);
-        Task Update(Ebook entity);
-        Task Remove(int id);
     }
 }

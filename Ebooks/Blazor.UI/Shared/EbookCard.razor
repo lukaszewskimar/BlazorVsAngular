@@ -9,6 +9,8 @@
         <ul class="list-unstyled mt-3 mb-4">
             <li>@(Item.Description)</li>
         </ul>
-        <button type="button" class="btn btn-lg btn-block btn-primary mt-auto">Czytaj więcej</button>
+        <NavLink class="btn btn-lg btn-block btn-dark mt-auto" href="@($"ebooks/{Item.Id}")">
+            Czytaj więcej
+        </NavLink>
     </div>
 </div>

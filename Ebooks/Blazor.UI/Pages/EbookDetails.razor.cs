@@ -1,20 +1,22 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Blazor.UI.Data;
 using Ebooks.Core.Domain;
 using Microsoft.AspNetCore.Components;
 
 namespace Blazor.UI.Pages
 {
-    public partial class Index
+    public partial class EbookDetails
     {
-        protected IEnumerable<Ebook> Ebooks { get; set; }
+        [Parameter] public int Id { get; set; }
+
+        protected int PageIndex { get; set; } = 0;
+        protected Ebook Ebook { get; set; }
 
         [Inject] private EbookService EbookService { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Ebooks = await EbookService.GetAll();
+            Ebook = await EbookService.Get(Id);
         }
     }
 }

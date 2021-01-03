@@ -17,29 +17,21 @@ namespace Ebooks.Data.Repositories
             _context = context;
         }
 
-        public async Task Add(Ebook entity)
+        public async Task<Ebook> GetById(int id, CancellationToken cancellationToken = default)
         {
-            await _context.Ebooks.AddAsync(entity);
-        }
+            var ebook = await _context.Ebooks.Include(e => e.Pages).Where(e => e.Id == id).FirstOrDefaultAsync(cancellationToken);
 
-        public Task<Ebook> Get(int id, CancellationToken cancellationToken = default)
-        {
-            return _context.Ebooks.Where(e => e.Id == id).FirstOrDefaultAsync(cancellationToken);
+            foreach (var page in ebook.Pages)
+            {
+                page.Ebook = null;
+            }
+
+            return ebook;
         }
 
         public async Task<IEnumerable<Ebook>> GetAll(CancellationToken cancellationToken = default)
         {
             return await _context.Ebooks.ToListAsync(cancellationToken);
-        }
-
-        public Task Remove(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task Update(Ebook entity)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
