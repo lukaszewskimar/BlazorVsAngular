@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ebooks.Api", "Ebooks.Api\Ebooks.Api.csproj", "{C5383577-A428-47E5-ADDB-A31041D9D612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ebooks.Api", "Ebooks.Api\Ebooks.Api.csproj", "{C5383577-A428-47E5-ADDB-A31041D9D612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ebooks.Core", "Ebooks.Core\Ebooks.Core.csproj", "{F76D10FA-8986-4502-B614-E496F68F47ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ebooks.Core", "Ebooks.Core\Ebooks.Core.csproj", "{F76D10FA-8986-4502-B614-E496F68F47ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ebooks.Data", "Ebooks.Data\Ebooks.Data.csproj", "{37DA9F20-DC00-4063-AA58-257E45ED3F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ebooks.Data", "Ebooks.Data\Ebooks.Data.csproj", "{37DA9F20-DC00-4063-AA58-257E45ED3F0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.UI", "Blazor.UI\Blazor.UI.csproj", "{BC3B135A-4A19-4717-9989-D806ADF3276A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{37DA9F20-DC00-4063-AA58-257E45ED3F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37DA9F20-DC00-4063-AA58-257E45ED3F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37DA9F20-DC00-4063-AA58-257E45ED3F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3B135A-4A19-4717-9989-D806ADF3276A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3B135A-4A19-4717-9989-D806ADF3276A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3B135A-4A19-4717-9989-D806ADF3276A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3B135A-4A19-4717-9989-D806ADF3276A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
