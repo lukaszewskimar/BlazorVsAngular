@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace Blazor.UI.Pages
 {
-    public partial class Index
+    public partial class Home
     {
         protected IEnumerable<Ebook> Ebooks { get; set; }
 
