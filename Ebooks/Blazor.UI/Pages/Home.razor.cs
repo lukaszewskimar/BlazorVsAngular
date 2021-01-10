@@ -9,12 +9,14 @@ namespace Blazor.UI.Pages
     public partial class Home
     {
         protected IEnumerable<Ebook> Ebooks { get; set; }
+        protected bool Loading { get; set; } = true;
 
         [Inject] private EbookService EbookService { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
             Ebooks = await EbookService.GetAll();
+            Loading = false;
         }
     }
 }

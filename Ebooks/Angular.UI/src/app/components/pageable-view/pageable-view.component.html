@@ -1,0 +1,27 @@
+<div *ngIf="data && data.length > 0">
+    {{data[activeIndex].content}}
+</div>
+
+<nav *ngIf="data" aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <button class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+            </button>
+        </li>
+
+        <ng-template ngFor let-ebook="$implicit" [ngForOf]="data" let-index="index">
+            <li class="page-item" [class.active]="activeIndex == index">
+                <button class="page-link" (click)="activeIndex=index">{{index+1}}</button>
+            </li>
+        </ng-template>
+
+        <li class="page-item disabled">
+            <button class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+            </button>
+        </li>
+    </ul>
+</nav>

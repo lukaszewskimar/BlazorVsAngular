@@ -7,6 +7,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EbookCardComponent } from './components/ebook-card/ebook-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EbookDetailsComponent } from './pages/ebook-details/ebook-details.component';
+import { PageableViewComponent } from './components/pageable-view/pageable-view.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { EbookCardComponent } from './components/ebook-card/ebook-card.component
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    EbookCardComponent
+    EbookCardComponent,
+    EbookDetailsComponent,
+    PageableViewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

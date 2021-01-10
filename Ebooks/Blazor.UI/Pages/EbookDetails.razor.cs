@@ -9,14 +9,15 @@ namespace Blazor.UI.Pages
     {
         [Parameter] public int Id { get; set; }
 
-        protected int PageIndex { get; set; } = 0;
         protected Ebook Ebook { get; set; }
+        protected bool Loading { get; set; } = true;
 
         [Inject] private EbookService EbookService { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
             Ebook = await EbookService.Get(Id);
+            Loading = false;
         }
     }
 }

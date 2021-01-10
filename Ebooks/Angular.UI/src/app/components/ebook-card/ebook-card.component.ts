@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ebook-card',
@@ -15,6 +15,8 @@ export class EbookCardComponent implements OnInit {
   }
 
   constructor() { }
+
+  @HostBinding('class') classes = 'card mb-4 box-shadow'
 
   ngOnInit(): void {
   }

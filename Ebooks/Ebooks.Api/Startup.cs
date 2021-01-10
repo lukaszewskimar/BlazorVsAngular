@@ -28,6 +28,7 @@ namespace Ebooks.Api
             );
 
             services.AddTransient<IEbookRepository, EbookRepository>();
+
             services.AddControllers();
         }
 
@@ -40,6 +41,11 @@ namespace Ebooks.Api
                 // On production execute migrations manually (Script-Migration).
                 context.Database.Migrate();
             }
+
+            app.UseCors(x => x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
 
             app.UseHttpsRedirection();
 

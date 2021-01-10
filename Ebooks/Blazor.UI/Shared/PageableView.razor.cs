@@ -10,7 +10,7 @@ namespace Blazor.UI.Shared
         [Parameter] public RenderFragment<TItem> Template { get; set; }
 
         protected IList<PageItem<TItem>> Items { get; set; } = new List<PageItem<TItem>>();
-        protected int Index { get; set; } = 0;
+        protected int ActiveIndex { get; set; } = 0;
 
         protected override void OnInitialized()
         {
